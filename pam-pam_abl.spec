@@ -19,8 +19,8 @@ PAM module which provides auto blacklisting of hosts and users
 responsible for repeated failed authentication attempts.
 
 %description -l pl
-Modu³ PAM automatycznie dopisuj±cy adres ip lub usera do blacklisty po
-wykryciu powtarzaj±cych siê b³êdów autentykacji.
+Modu³ PAM automatycznie dopisuj±cy adres ip lub u¿ytkownika do
+blacklisty po wykryciu powtarzaj±cych siê b³êdów autentyfikacji.
 
 %prep
 %setup -q -n %{modulename}
