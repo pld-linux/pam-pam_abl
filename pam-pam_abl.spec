@@ -1,7 +1,7 @@
 # TODO: optflags
 %define 	modulename pam_abl
 Summary:	PAM abl module
-Summary(pl):	Modu³ PAM automatycznie dopisuj±cy do blacklisty
+Summary(pl.UTF-8):   ModuÅ‚ PAM automatycznie dopisujÄ…cy do blacklisty
 Name:		pam-%{modulename}
 Version:	0.2.3
 Release:	0.1
@@ -19,9 +19,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 PAM module which provides auto blacklisting of hosts and users
 responsible for repeated failed authentication attempts.
 
-%description -l pl
-Modu³ PAM automatycznie dopisuj±cy do blacklisty hosty i u¿ytkowników
-po wykryciu powtarzaj±cych siê b³êdów uwierzytelnienia.
+%description -l pl.UTF-8
+ModuÅ‚ PAM automatycznie dopisujÄ…cy do blacklisty hosty i uÅ¼ytkownikÃ³w
+po wykryciu powtarzajÄ…cych siÄ™ bÅ‚Ä™dÃ³w uwierzytelnienia.
 
 %prep
 %setup -q -n %{modulename}
