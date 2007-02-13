@@ -1,7 +1,7 @@
 # TODO: optflags
 %define 	modulename pam_abl
 Summary:	PAM abl module
-Summary(pl.UTF-8):   Moduł PAM automatycznie dopisujący do blacklisty
+Summary(pl.UTF-8):	Moduł PAM automatycznie dopisujący do blacklisty
 Name:		pam-%{modulename}
 Version:	0.2.3
 Release:	0.1
