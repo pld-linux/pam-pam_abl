@@ -1,16 +1,21 @@
-# TODO: optflags
+#
+# TODO:
+#	- pass proper dirs to configure
+#	- cleanup install
+#
 %define 	modulename pam_abl
 Summary:	PAM abl module
 Summary(pl.UTF-8):	Moduł PAM automatycznie dopisujący do blacklisty
 Name:		pam-%{modulename}
-Version:	0.2.3
+Version:	0.3.0
 Release:	0.1
 Epoch:		0
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/pam-abl/pam_abl-%{version}.tar.gz
-# Source0-md5:	fbcf97067e9647fa1d9257d4e6133cba
-URL:		http://www.hexten.net/pam_abl/
+Source0:	http://pam-abl.deksai.com/downloads/pam-abl-%{version}.tar.bz2
+# Source0-md5:	76b00cc5a2d91a7419b673da51c8e775
+URL:		http://pam-abl.deksai.com/
+BuildRequires:	db-devel
 BuildRequires:	pam-devel
 Obsoletes:	pam_abl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,14 +29,18 @@ Moduł PAM automatycznie dopisujący do blacklisty hosty i użytkowników
 po wykryciu powtarzających się błędów uwierzytelnienia.
 
 %prep
-%setup -q -n %{modulename}
+%setup -q -n pam-abl-%{version}
 
 %build
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{/etc/security,/%{_lib}/security,%{_sbindir},/var/lib/abl}
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install pam_abl.so $RPM_BUILD_ROOT/%{_lib}/security
 install conf/pam_abl.conf $RPM_BUILD_ROOT/etc/security/pam_abl.conf
