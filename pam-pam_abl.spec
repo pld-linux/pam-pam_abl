@@ -3,7 +3,7 @@ Summary:	PAM abl module
 Summary(pl.UTF-8):	Moduł PAM automatycznie dopisujący do blacklisty
 Name:		pam-%{modulename}
 Version:	0.4.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://downloads.sourceforge.net/pam-abl/pam-abl-%{version}.tar.bz2
